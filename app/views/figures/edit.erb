@@ -10,9 +10,9 @@ You are going to have the chance to edit <%=@figure.name%>'s page. <br/>
 Figure Name:<br/>
 <input type="text" name="figure[name]" id="name">
 
-
+Landmark's That <%=@figure.name%> Might be associated with:<br/>
 <%Landmark.all.each do |landmark|%>
-<input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark) %>><%=landmark.name%><br/></input>
+<input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark) %>><%=landmark.name%><br/></input><br/>
 <%end%>
 
 <%Title.all.each do |title|%>
