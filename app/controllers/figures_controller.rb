@@ -40,5 +40,5 @@ class FiguresController < ApplicationController
     @figure=Figure.find(params[:id])
     erb :"/figures/edit"
   end
-  
+
 end
