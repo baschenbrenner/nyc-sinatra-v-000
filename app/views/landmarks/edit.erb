@@ -1,0 +1,20 @@
+Edit a Landmark Page
+Current Info About This Landmark
+Name: <%=@landmark.name%><br/>
+Year Completed: <%=@landmark.year_completed%><br/>
+
+
+<form method="POST" action="/landmarks/<%=@landmark.id%>">
+  <input type="hidden" name="_method" value="PATCH">
+
+<br/>
+Landmark Name:<br/>
+<input type="text" name="landmark[name]" id="name">
+Year Completed:<br/>
+<input type="text" name="landmark[year_completed]" id="year_completed">
+
+<input type="submit" value="Edit Landmark">
+
+
+
+</form>

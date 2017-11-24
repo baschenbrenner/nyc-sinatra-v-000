@@ -1,0 +1,7 @@
+<h1>New York City Landmarks</h1>
+
+<ul>
+  <%@landmarks.each do |landmark|%>
+  <li><a href="/landmarks/<%=landmark.id%>"><%=landmark.name%> </a>completed in <%=landmark.year_completed%></li>
+  <%end%>
+</ul>
