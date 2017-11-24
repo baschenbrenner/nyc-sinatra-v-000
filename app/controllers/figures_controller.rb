@@ -45,7 +45,7 @@ class FiguresController < ApplicationController
   post '/figures/:id' do
 
     @figure = Figure.find(params[:id])
-  
+
     if params[:figure]["name"] != ""
       @figure.name = params["figure"]["name"]
     end
@@ -61,6 +61,6 @@ class FiguresController < ApplicationController
     end
 
   @figure.save
-  redirect to "/landmarks/#{@landmark.id}"
+  redirect to "/figures/#{@figure.id}"
   end
 end
