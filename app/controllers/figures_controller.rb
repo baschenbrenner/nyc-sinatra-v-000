@@ -46,11 +46,12 @@ class FiguresController < ApplicationController
 
     @figure = Figure.find(params[:id])
     binding.pry
-    if params[:landmark]["name"] != ""
-      @landmark.name = params["landmark"]["name"]
+    if params[:figure]["name"] != ""
+      @figure.name = params["figure"]["name"]
     end
-    if params["landmark"]["year_completed"] != ""
-      @landmark.year_completed = params["landmark"]["year_completed"].to_i
+    if params[:figure]["new_landmark"]["name"] != ""
+      @figure.titles<<Landmark.create(name: params[:figure]["new_landmark"]["name"])
+      
     end
   @landmark.save
   redirect to "/landmarks/#{@landmark.id}"
