@@ -41,4 +41,18 @@ class FiguresController < ApplicationController
     erb :"/figures/edit"
   end
 
+
+  post '/figures/:id' do
+    
+    @figure = Figure.find(params[:id])
+    binding.pry
+    if params[:landmark]["name"] != ""
+      @landmark.name = params["landmark"]["name"]
+    end
+    if params["landmark"]["year_completed"] != ""
+      @landmark.year_completed = params["landmark"]["year_completed"].to_i
+    end
+  @landmark.save
+  redirect to "/landmarks/#{@landmark.id}"
+  end
 end
