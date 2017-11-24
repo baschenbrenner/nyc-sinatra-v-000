@@ -60,7 +60,7 @@ class FiguresController < ApplicationController
       @figure.titles << Title.create(name: params[:figure]["new_title"]["name"])
     end
 
-  @landmark.save
+  @figure.save
   redirect to "/landmarks/#{@landmark.id}"
   end
 end
