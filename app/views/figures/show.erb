@@ -1,4 +1,5 @@
 <h1><%=@figure.name%></h1>
 
 Titles:
-<%=@figure.titles%>
+<%@figure.titles.each do |title|%>
+<%=title.name%>
