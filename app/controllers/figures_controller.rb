@@ -50,9 +50,13 @@ class FiguresController < ApplicationController
       @figure.name = params["figure"]["name"]
     end
     if params[:figure]["new_landmark"]["name"] != ""
-      @figure.titles<<Landmark.create(name: params[:figure]["new_landmark"]["name"])
-      
+      @figure.landmarks<<Landmark.create(name: params[:figure]["new_landmark"]["name"])
+      if params[:figure]["new_landmark"]["year_completed"] !=""
+        Landmark.last.year_completed = params[:figure]["new_landmark"]["year_completed"]
+        Landmark.last.save
     end
+    if params[:figure]["new_title"]["name"] != ""
+      
   @landmark.save
   redirect to "/landmarks/#{@landmark.id}"
   end
