@@ -54,9 +54,12 @@ class FiguresController < ApplicationController
       if params[:figure]["new_landmark"]["year_completed"] !=""
         Landmark.last.year_completed = params[:figure]["new_landmark"]["year_completed"]
         Landmark.last.save
+      end
     end
     if params[:figure]["new_title"]["name"] != ""
-      
+      @figure.titles << Title.create(name: params[:figure]["new_title"]["name"])
+    end
+
   @landmark.save
   redirect to "/landmarks/#{@landmark.id}"
   end
