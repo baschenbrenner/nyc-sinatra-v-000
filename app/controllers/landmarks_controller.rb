@@ -20,7 +20,7 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks/:id' do
-    binding.pry 
+    
     @landmark = Landmark.find(params[:id])
     if params[:landmark]["name"] != ""
       @landmark.name = params["landmark"]["name"]
