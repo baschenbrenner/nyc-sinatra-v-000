@@ -1,3 +1,18 @@
 Edit a Figure Page <br/><br/>
 
 You are going to have the chance to edit <%=@figure.name%>'s page. <br/>
+
+
+<form method="POST" action="/figures/<%=@figure.id%>">
+  <input type="hidden" name="_method" value="PATCH">
+
+<br/>
+Figure Name:<br/>
+<input type="text" name="figure[name]" id="name">
+
+
+<input type="submit" value="Edit Figure">
+
+
+
+</form>
