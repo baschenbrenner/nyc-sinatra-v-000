@@ -45,7 +45,7 @@ class FiguresController < ApplicationController
   post '/figures/:id' do
 
     @figure = Figure.find(params[:id])
-    binding.pry
+  
     if params[:figure]["name"] != ""
       @figure.name = params["figure"]["name"]
     end
