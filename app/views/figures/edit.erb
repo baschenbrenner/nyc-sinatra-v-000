@@ -11,6 +11,10 @@ Figure Name:<br/>
 <input type="text" name="figure[name]" id="name">
 
 
+<%Landmark.all.each do |landmark|%>
+<input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>" checked if ><%=landmark.name%><br/></input>
+<%end%>
+
 <input type="submit" value="Edit Figure">
 
 
